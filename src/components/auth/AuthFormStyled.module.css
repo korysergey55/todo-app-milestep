@@ -1,0 +1,56 @@
+.formAuth {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ min-width: 500px;
+ min-height: 300px;
+}
+.title {
+ margin-top: 20px;
+ margin-bottom: 20px;
+ font-size: 30px;
+ color: #819ff5;
+ text-align: center;
+text-shadow: 4px 4px 2px rgba(150, 150, 150, 0.48);
+}
+.labelName {
+ margin-bottom: 20px;
+ font-size: 20px;
+ font-weight: 500;
+}
+.inputName {
+ margin-left: 70px;
+ margin-right: 10px;
+}
+.radioContainer {
+ display: flex;
+}
+.select {
+ width: 150px;
+ height: 30px;
+ margin-bottom: 20px;
+ border-radius: 7px;
+ font-weight: 700;
+ color: blue;
+}
+.select:focus {
+ outline: none;
+}
+.checkbox {
+ margin-right: 15px;
+}
+.buttonGo {
+ min-width: 40px;
+ margin-bottom: 20px;
+ padding: 5px;
+ border-radius: 7px;
+ color: white;
+ background-color: rgb(62, 62, 250);
+ box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.buttonGo:hover {
+ cursor: pointer;
+ color: black;
+ background-color: rgb(88, 255, 11);
+}

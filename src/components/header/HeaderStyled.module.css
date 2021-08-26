@@ -1,0 +1,31 @@
+.navigationList {
+  height: 60px;
+  margin-right: 20px;
+ padding: 0 20px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-bottom: 2px solid #819ff5;
+ background-color: #424242;
+ list-style: none;
+}
+
+.navigationListItem {
+ margin-top: 10px;
+  margin-right: 20px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.navigationListItemAnchor {
+ text-decoration: none;
+ color: #688df5;
+ text-transform: uppercase;
+}
+.navigationListItemAnchor:hover {
+ color:  #26f713;
+}
+.navigationUser{
+  font-size: 15px;
+  color: rgb(4, 241, 24);
+
+}

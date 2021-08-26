@@ -1,8 +1,12 @@
 import React from "react";
+import Header from "./header/Header";
+import Main from "./main/Main";
+
 const App = () => {
  return (
   <>
-   <h2>TodoAppTitle</h2>
+   <Header/>
+   <Main/>
   </>
  );
 };
