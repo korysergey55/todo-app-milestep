@@ -3,8 +3,11 @@ import { mainRoutes } from "../../routs/mainRout";
 import { Switch } from "react-router-dom";
 import PrivateRoute from "../../routs/PrivateRoute";
 import PublicRoute from "../../routs/PublicRoute";
+import { useSelector } from "react-redux";
+import { authTokenSelector } from "../../redax/auth/authSelectors";
 
 const Main = () => {
+ const token = useSelector(authTokenSelector);
  return (
   <>
    <Switch>
@@ -15,7 +18,7 @@ const Main = () => {
        exact={route.exact}
        component={route.component}
        key={route.path}
-       //   token={token}
+       token={token}
       />
      ) : (
       <PublicRoute
@@ -24,7 +27,7 @@ const Main = () => {
        isRestricted={route.isRestricted}
        component={route.component}
        key={route.path}
-       //   token={token}
+       token={token}
       />
      )
     )}

@@ -1,7 +1,7 @@
 .navigationList {
   height: 60px;
-  margin-right: 20px;
- padding: 0 20px;
+  margin: 0;
+  padding: 0 20px;
  display: flex;
  align-items: center;
  justify-content: center;

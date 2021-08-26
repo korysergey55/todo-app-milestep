@@ -29,7 +29,7 @@ export const loginUserOperation =
   try {
    const response = await loginUserApi(InputFormState);
    dispatch(loginUserAction(response.data));
-   history.push("/shop");
+   history.push("/tasks");
    //    Notification("loginSuccess");
   } catch (error) {
    dispatch(loginUserActionError(error.message));

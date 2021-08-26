@@ -8,7 +8,7 @@ export const mainRoutes = [
   component: TasksPage,
   exact: true,
   isRestricted: false,
-  isPrivate: false,
+  isPrivate: true,
  },
 
  {

@@ -8,6 +8,7 @@ import {
  authUserSelector,
 } from "../../redax/auth/authSelectors";
 import { logoutUserAction } from "../../redax/auth/authActions";
+import HeaderList from "./headerList/HeaderList";
 
 const Header = () => {
  const token = useSelector(authTokenSelector);
@@ -17,16 +18,7 @@ const Header = () => {
   <>
    <ul className={styled.navigationList}>
     {mainRoutes.map((route) => (
-     <li className={styled.navigationListItem} key={route.path}>
-      <NavLink
-       to={route.path}
-       exact={route.exact}
-       className={styled.navigationListItemAnchor}
-       activeClassName={styled.navigationListItemActive}
-      >
-       {route.name}
-      </NavLink>
-     </li>
+     <HeaderList route={route} token={token} key={route.path} />
     ))}
 
     {token && (
@@ -41,7 +33,7 @@ const Header = () => {
         Logout
        </NavLink>
       </li>
-       <h2 className={styled.navigationUser}>{user}</h2>
+      <h2 className={styled.navigationUser}>{user}</h2>
      </>
     )}
    </ul>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Filter from '../components/filter/Filter';
 import AddTodoTasks from '../components/todoTasks/AddTodoTasks';
-import styles from "../components/todoTasks/AddTodoTasks";
+import styles from "./TasksPageStyled.module.css";
 const TasksPage = () => {
     return (
      <>
