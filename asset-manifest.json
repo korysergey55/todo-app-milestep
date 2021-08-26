@@ -1,23 +1,21 @@
 {
   "files": {
-    "main.css": "/todo-app-milestep/static/css/main.a617e044.chunk.css",
-    "main.js": "/todo-app-milestep/static/js/main.e81d343d.chunk.js",
-    "main.js.map": "/todo-app-milestep/static/js/main.e81d343d.chunk.js.map",
-    "runtime-main.js": "/todo-app-milestep/static/js/runtime-main.47c04af0.js",
-    "runtime-main.js.map": "/todo-app-milestep/static/js/runtime-main.47c04af0.js.map",
-    "static/js/2.3fde46af.chunk.js": "/todo-app-milestep/static/js/2.3fde46af.chunk.js",
-    "static/js/2.3fde46af.chunk.js.map": "/todo-app-milestep/static/js/2.3fde46af.chunk.js.map",
-    "static/js/3.dcc1608f.chunk.js": "/todo-app-milestep/static/js/3.dcc1608f.chunk.js",
-    "static/js/3.dcc1608f.chunk.js.map": "/todo-app-milestep/static/js/3.dcc1608f.chunk.js.map",
+    "main.css": "/todo-app-milestep/static/css/main.18e8365f.chunk.css",
+    "main.js": "/todo-app-milestep/static/js/main.9892cba2.chunk.js",
+    "main.js.map": "/todo-app-milestep/static/js/main.9892cba2.chunk.js.map",
+    "runtime-main.js": "/todo-app-milestep/static/js/runtime-main.68f8b81f.js",
+    "runtime-main.js.map": "/todo-app-milestep/static/js/runtime-main.68f8b81f.js.map",
+    "static/js/2.e62746b3.chunk.js": "/todo-app-milestep/static/js/2.e62746b3.chunk.js",
+    "static/js/2.e62746b3.chunk.js.map": "/todo-app-milestep/static/js/2.e62746b3.chunk.js.map",
     "index.html": "/todo-app-milestep/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/todo-app-milestep/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.3fde46af.chunk.js.LICENSE.txt": "/todo-app-milestep/static/js/2.3fde46af.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/todo-app-milestep/static/media/logo.6ce24c58.svg"
+    "static/css/main.18e8365f.chunk.css.map": "/todo-app-milestep/static/css/main.18e8365f.chunk.css.map",
+    "static/js/2.e62746b3.chunk.js.LICENSE.txt": "/todo-app-milestep/static/js/2.e62746b3.chunk.js.LICENSE.txt",
+    "static/media/TasksPageStyled.module.css": "/todo-app-milestep/static/media/tasks3.3c9e43f7.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.47c04af0.js",
-    "static/js/2.3fde46af.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.e81d343d.chunk.js"
+    "static/js/runtime-main.68f8b81f.js",
+    "static/js/2.e62746b3.chunk.js",
+    "static/css/main.18e8365f.chunk.css",
+    "static/js/main.9892cba2.chunk.js"
   ]
 }
