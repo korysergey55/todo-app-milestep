@@ -1,3 +1,12 @@
+
+.headerTitle{
+   margin-right: 50px;
+  font-size: 25px;
+  color: #819ff5;
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+   #fafafa 0px 0px 20px, #faf7f9 0px 0px 30px, #ffffff 0px 0px 40px,
+   #fcf6f9 0px 0px 50px, #fcf8fa 0px 0px 75px;
+}
 .navigationList {
   height: 60px;
   margin: 0;

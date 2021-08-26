@@ -1,0 +1,10 @@
+.authPageContainer{
+    min-width: 100vw;
+    min-height: 100vh;
+   padding: 20px;
+
+    background-image:  url(../images/tasks2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

@@ -1,3 +1,11 @@
+
+.authFormContainer{
+    width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #819ff5;
+    border-radius: 10px;
+}
 .formAuth {
  display: flex;
  flex-direction: column;
