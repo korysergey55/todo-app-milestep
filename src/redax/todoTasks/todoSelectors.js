@@ -1,0 +1,1 @@
+export const submitNewTaskSelector = (state) => state.tasks.tasks;

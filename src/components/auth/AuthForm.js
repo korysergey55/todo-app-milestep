@@ -67,8 +67,8 @@ const AuthForm = () => {
    <form className={styles.formAuth} onSubmit={onHandleSubmit}>
     <h2 className={styles.title}>
      {location.pathname === "/registration"
-      ? "Registration Page"
-      : "Login Page"}
+      ? "Registration"
+      : "Login"}
     </h2>
 
     {location.pathname === "/registration" && (
