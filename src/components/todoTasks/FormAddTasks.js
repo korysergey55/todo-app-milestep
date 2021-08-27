@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { submitNewTaskSelector } from "../../redax/todoTasks/todoSelectors";
 import { createNewTask } from "../../redax/todoTasks/todoActions";
+import { createNewAdvApi } from "../../services/tasksApi";
+import { getFormAddApiOperation } from "../../redax/todoTasks/todoOperations";
 
 const FormAddTasks = () => {
  const initialState = {
@@ -34,7 +36,7 @@ const FormAddTasks = () => {
  const handleSubmitForm = (evt) => {
   evt.preventDefault();
   if (findDuplicate(state.name)) {
-   dispatch(createNewTask({ ...state }));
+   dispatch(getFormAddApiOperation(state));
    resetForm();
   }
  };

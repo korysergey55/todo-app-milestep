@@ -8,6 +8,7 @@ import { authTokenSelector } from "../../redax/auth/authSelectors";
 
 const Main = () => {
  const token = useSelector(authTokenSelector);
+
  return (
   <>
    <Switch>

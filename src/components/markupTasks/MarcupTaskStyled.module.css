@@ -7,6 +7,7 @@
  padding: 0;
 }
 .newTask {
+ position: relative;
  display: flex;
  justify-content: center;
  flex-direction: column;
@@ -21,6 +22,7 @@
  background-color: rgb(111, 111, 250);
  overflow-wrap: break-word;
 }
+
 .newTasktName {
  margin: 0;
  margin-right: 20px;
@@ -45,6 +47,9 @@
  color: white;
 }
 .checkboxTask {
+ position: absolute;
+ top: 8%;
+ left: -28%;
  width: 20px;
  height: 20px;
  margin-top: 10px;
