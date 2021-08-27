@@ -3,10 +3,11 @@ import styles from "./MarcupTaskStyled.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { submitNewTaskSelector } from "../../redax/todoTasks/todoSelectors";
 import { handleDeleteTask } from "../../redax/todoTasks/todoActions";
+import { getTaskFilteredSelector } from "../../redax/filter/filterSelectors";
 
 const MarkupTasks = () => {
  const dispatch = useDispatch();
- const newItems = useSelector(submitNewTaskSelector);
+ const newItems = useSelector(getTaskFilteredSelector);
  return (
   <div className={styles.markupTaskContainer}>
    <ul className={styles.ulContainer}>

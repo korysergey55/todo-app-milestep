@@ -9,8 +9,8 @@ const productsFilerReducerError = createReducer("", {
  [setFilterError]: (state, action) => action.payload,
 });
 
-const FilterReducer = combineReducers({
+const filterReducer = combineReducers({
  filter: productsFilerReducer,
  filterError: productsFilerReducerError,
 });
-export default FilterReducer;
+export default filterReducer;

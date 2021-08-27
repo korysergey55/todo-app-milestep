@@ -1,6 +1,6 @@
 export const filterSelector = (state) => state.filter.filter;
 
-export const getProductsFilterSelector = (state, category = "phones") =>
- state.products.items[category].filter((product) =>
-  product?.name.toLowerCase().includes(state.filter?.filter.toLowerCase())
+export const getTaskFilteredSelector = (state) =>
+ state.tasks.tasks.filter((task) =>
+  task?.name.toLowerCase().includes(state.filter?.filter.toLowerCase())
  );

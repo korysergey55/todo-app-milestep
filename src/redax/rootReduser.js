@@ -1,12 +1,26 @@
 import { combineReducers } from "redux";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
 import authReducer from "./auth/authReducer";
-import FilterReducer from "./filter/filterReducer";
+import filterReducer from "./filter/filterReducer";
 import tasksReducer from "./todoTasks/todoReducer";
 
+const persistAuthConfig = {
+ key: "token",
+ storage,
+ whitelist: ["token"],
+};
+const persistTasksConfig = {
+ key: "tasks",
+ storage,
+ whitelist: ["tasks"],
+};
+
 const rootReducer = combineReducers({
- tasks: tasksReducer,
- auth: authReducer,
- filter: FilterReducer,
+ tasks: persistReducer(persistTasksConfig, tasksReducer),
+ auth: persistReducer(persistAuthConfig, authReducer),
+ filter: filterReducer,
 });
 
 export default rootReducer;
