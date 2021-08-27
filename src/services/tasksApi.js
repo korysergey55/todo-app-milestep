@@ -1,23 +1,23 @@
 import axios from "axios";
 
 export const getAllAdvApi = async (token) => {
- axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+//  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
  try {
   const response = await axios.get(
    process.env.REACT_APP_BASE_URL + `advertisements/tasks.json`
   );
-  return response.data;
+  return response;
  } catch (error) {
   console.log(error);
  }
 };
 
 export const createNewAdvApi = async (newAdv, token) => {
- axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
  try {
   const response = await axios.post(
    process.env.REACT_APP_BASE_URL + `advertisements/tasks.json`,
-   newAdv
+    newAdv 
   );
   return response;
  } catch (error) {
@@ -47,3 +47,4 @@ export const getProductByIDApi = async (id, token) => {
   console.log(error);
  }
 };
+
