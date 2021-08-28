@@ -18,7 +18,8 @@ const persistTasksConfig = {
 };
 
 const rootReducer = combineReducers({
- tasks: persistReducer(persistTasksConfig, tasksReducer),
+ tasks:tasksReducer,
+//  tasks: persistReducer(persistTasksConfig, tasksReducer),
  auth: persistReducer(persistAuthConfig, authReducer),
  filter: filterReducer,
 });

@@ -3,14 +3,13 @@ import styles from "./FormAddTasksStyled.module.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { submitNewTaskSelector } from "../../redax/todoTasks/todoSelectors";
-import { createNewTask } from "../../redax/todoTasks/todoActions";
-import { createNewAdvApi } from "../../services/tasksApi";
 import { getFormAddApiOperation } from "../../redax/todoTasks/todoOperations";
 
 const FormAddTasks = () => {
  const initialState = {
   name: "",
   taskText: "",
+  licence: false,
  };
  const dispatch = useDispatch();
  const [state, setState] = useState(initialState);

@@ -11,7 +11,7 @@ import {
 
 const taskItemsReducer = createReducer([], {
  [getAllTasks]: (state, action) => action.payload,
- [createNewTask]: (state, action) => [...state, action.payload],
+ [createNewTask]: (state, action) => [ action.payload, ...state],
  [handleDeleteTask]: (state, action) =>
   state.filter((task) => task.id !== action.payload),
 });
@@ -22,9 +22,9 @@ const taskItemsReducerError = createReducer([], {
  [handleDeleteTaskError]: (state, action) => action.payload,
 });
 
- const tasksReducer = combineReducers({
-  tasks: taskItemsReducer,
-  tasksError: taskItemsReducerError,
- });
+const tasksReducer = combineReducers({
+ tasks: taskItemsReducer,
+ tasksError: taskItemsReducerError,
+});
 
- export default tasksReducer;
+export default tasksReducer;

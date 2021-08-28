@@ -15,18 +15,19 @@ import {
 
 export const getAllAdvByCategoryApiOperation =
  () => async (dispatch, getState) => {
-  const token = getState().auth.user?.token;
+  const token = getState().auth.user?.idToken;
+
   try {
    const response = await getAllAdvApi(token);
-   //    if (response) {
-   //     const allProducts = Object.keys(response).map((key) => ({
-   //      id: key,
-   //      ...response[key],
-   //     }));
-   //}
+   if (response) {
+    const allProducts = Object.keys(response).map((key) => ({
+     id: key,
+     ...response[key],
+    }));
 
-   dispatch(getAllTasks(response.data));
-   console.log(response.data);
+    dispatch(getAllTasks(allProducts));
+    console.log(allProducts);
+   }
   } catch (error) {
    dispatch(getAllTasksError(error));
   }
