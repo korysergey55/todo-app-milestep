@@ -57,6 +57,10 @@
  cursor: pointer;
  background-color: rgb(106, 243, 14);
 }
+.inputEditName{
+    width: 200px;
+    margin: 0 auto;
+}
 .checkboxTask {
  position: absolute;
  top: 8%;

@@ -61,8 +61,7 @@ export const getToggleComletedApi = async (id, item, token) => {
   }
 };
 
-export const getEditTaskApi = async (id, item, token) => {
-  // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+export const getEditTaskApi = async (id, item) => {
   try {
     const response = await axios.patch(
       process.env.REACT_APP_BASE_URL + `advertisements/tasks/${id}.json`,

@@ -6,11 +6,13 @@ import {
    getDeleteTask,
    toggleComleted,
    getEditTask,
+   getNewEditedTask,
    getAllTasksError,
    createNewTaskError,
    getDeleteTaskError,
    toggleComletedError,
    getEditTaskError,
+   getNewEditedTaskError,
 } from "./todoActions";
 
 const taskItemsReducer = createReducer([], {
@@ -26,6 +28,7 @@ const editTaskItemsReducer = createReducer(null, {
    [getEditTask]: (state, action) => action.payload,
    // state.map((task) =>
    //    ({ ...task, name: action.payload })),
+   [getNewEditedTask]: (state, action) => action.payload,
 })
 
 const taskItemsReducerError = createReducer([], {
@@ -34,6 +37,7 @@ const taskItemsReducerError = createReducer([], {
    [getDeleteTaskError]: (state, action) => action.payload,
    [toggleComletedError]: (state, action) => action.payload,
    [getEditTaskError]: (state, action) => action.payload,
+   [getNewEditedTaskError]: (state, action) => action.payload,
 });
 
 const tasksReducer = combineReducers({

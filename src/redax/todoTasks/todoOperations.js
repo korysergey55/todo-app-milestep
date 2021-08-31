@@ -15,7 +15,8 @@ import {
   getAllTasksError,
   createNewTaskError,
   getDeleteTaskError,
-  getEditTaskError,
+  toggleComletedError,
+  getNewEditedTaskError,
 } from "./todoActions";
 
 export const getAllTasksOperation =
@@ -71,11 +72,10 @@ export const getUpdateTaskOperation =
 
 export const getEditTaskOperation =
   (id, item) => async (dispatch, getState) => {
-    const token = getState().auth.user?.token;
     try {
-      dispatch(getEditTask(id));
-      await getEditTaskApi(id, item, token);
+      await getEditTaskApi(id, item);
+      dispatch(getEditTask(null));
     } catch (error) {
-      dispatch(getDeleteTaskError(error));
+      dispatch(toggleComletedError(error));
     }
   };
