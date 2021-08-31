@@ -5,9 +5,9 @@ export const getFilteredByTitleSelector = (state) =>
   task.name?.toLowerCase().includes(state.filter?.filter.toLowerCase())
  );
 
-export const getFilteredByNotCompletedSelector = (state) =>
+export const filteredByNotCompletedSelector = (state) =>
     state.tasks.tasks.filter((task) => task.completed === false)
  
-export const getFilteredByCompletedSelector = (state) =>
+export const filteredByCompletedSelector = (state) =>
     state.tasks.tasks.filter((task) => task.completed === true)
  

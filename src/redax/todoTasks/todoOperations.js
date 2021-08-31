@@ -16,6 +16,7 @@ import {
   createNewTaskError,
   getDeleteTaskError,
   toggleComletedError,
+  getEditTaskError,
   getNewEditedTaskError,
 } from "./todoActions";
 
@@ -66,7 +67,7 @@ export const getUpdateTaskOperation =
       dispatch(toggleComleted(id));
       await getToggleComletedApi(id, item, token);
     } catch (error) {
-      dispatch(getDeleteTaskError(error));
+      dispatch(toggleComletedError(error));
     }
   };
 
@@ -76,6 +77,6 @@ export const getEditTaskOperation =
       await getEditTaskApi(id, item);
       dispatch(getEditTask(null));
     } catch (error) {
-      dispatch(toggleComletedError(error));
+      dispatch(getEditTaskError(error));
     }
   };

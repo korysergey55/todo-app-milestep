@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./MarcupTaskStyled.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllTasks, getEditTask } from "../../redax/todoTasks/todoActions";
-import { getFilteredByCompletedSelector, getFilteredByTitleSelector } from "../../redax/filter/filterSelectors";
+import { filteredByNotCompletedSelector, getFilteredByTitleSelector } from "../../redax/filter/filterSelectors";
 import { useState } from "react";
 import { getAllTasksOperation, getDaleteTaskOperation, getEditTaskOperation, getUpdateTaskOperation } from "../../redax/todoTasks/todoOperations";
 import { editTaskSelector } from "../../redax/todoTasks/todoSelectors";
@@ -20,19 +20,23 @@ const MarkupTasks = () => {
   const dispatch = useDispatch();
   const [state, setState] = useState(initialState);
   const newItems = useSelector(getFilteredByTitleSelector);
-  const itemsCompleted = useSelector(getFilteredByCompletedSelector);
+  const itemsCompleted = useSelector(filteredByNotCompletedSelector);
   const editItem = useSelector(editTaskSelector);
 
   useEffect(() => {
-    dispatch(getAllTasksOperation());
-  }, [dispatch, newItems]);
+    // dispatch(getAllTasksOperation());
+  }, [newItems]);
 
   const handleChange = (evt) => {
     setState((prev) => ({ ...prev, [evt.target.name]: evt.target.value }));
   };
 
-  const handleSubmitEdit = (id, item) => {
+  const getHandleEditTask = (item) => {
+    dispatch(getEditTask(item))
     setState(item);
+  }
+
+  const handleSubmitEdit = (id, item) => {
     dispatch(getEditTaskOperation(id, state));
   }
 
@@ -53,7 +57,7 @@ const MarkupTasks = () => {
           </label>
         </li>
         {newItems?.map((item) => (
-          <li className={styles.newTask} key={item.id}>
+          <li className={styles.newTask} key={item.name}>
             <p className={styles.completed}>Completed</p>
             <input
               className={styles.checkboxTask}
@@ -72,7 +76,7 @@ const MarkupTasks = () => {
               (<button
                 className={styles.btnEdit}
                 type="button"
-                onClick={()=>dispatch(getEditTask(item))}
+                onClick={() => getHandleEditTask(item)}
               >Edit Title
               </button>)}
 

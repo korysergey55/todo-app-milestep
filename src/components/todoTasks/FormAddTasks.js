@@ -3,7 +3,7 @@ import styles from "./FormAddTasksStyled.module.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { submitNewTaskSelector } from "../../redax/todoTasks/todoSelectors";
-import { getFormAddTaskOperation } from "../../redax/todoTasks/todoOperations";
+import { getAllTasksOperation, getFormAddTaskOperation } from "../../redax/todoTasks/todoOperations";
 
 const FormAddTasks = () => {
 	const initialState = {
@@ -37,6 +37,7 @@ const FormAddTasks = () => {
 		if (findDuplicate(state.name)) {
 			dispatch(getFormAddTaskOperation(state));
 		}
+
 		resetForm();
 	};
 
