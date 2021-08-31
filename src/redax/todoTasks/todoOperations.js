@@ -38,11 +38,11 @@ export const getAllTasksOperation =
   };
 
 export const getFormAddTaskOperation =
-  (id) => async (dispatch, getState) => {
+  (newTask) => async (dispatch, getState) => {
     const token = getState().auth.user?.token;
     try {
-      await createNewAdvApi(id, token);
-      dispatch(createNewTask(id));
+      await createNewAdvApi(newTask, token);
+      dispatch(createNewTask(newTask));
     } catch (error) {
       dispatch(createNewTaskError(error));
     }

@@ -58,8 +58,8 @@
  background-color: rgb(106, 243, 14);
 }
 .inputEditName{
-    width: 200px;
-    margin: 0 auto;
+width: 200px;
+margin: 0 auto;
 }
 .checkboxTask {
  position: absolute;
@@ -71,3 +71,10 @@
  margin-left: 90%;
  display: inline-block;
 }
+.checkboxTaskCompletedLabel{
+    margin-right: 10px;
+color: white;
+}
+/* .checkboxTaskCompletedInput{
+
+} */

@@ -6,8 +6,8 @@ export const getFilteredByTitleSelector = (state) =>
  );
 
 export const getFilteredByNotCompletedSelector = (state) =>
-    state.tasks.tasks.filter((task) => task.licence === false)
+    state.tasks.tasks.filter((task) => task.completed === false)
  
 export const getFilteredByCompletedSelector = (state) =>
-    state.tasks.tasks.filter((task) => task.licence === true)
+    state.tasks.tasks.filter((task) => task.completed === true)
  

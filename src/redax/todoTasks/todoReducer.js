@@ -26,8 +26,6 @@ const taskItemsReducer = createReducer([], {
 
 const editTaskItemsReducer = createReducer(null, {
    [getEditTask]: (state, action) => action.payload,
-   // state.map((task) =>
-   //    ({ ...task, name: action.payload })),
    [getNewEditedTask]: (state, action) => action.payload,
 })
 

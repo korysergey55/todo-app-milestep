@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./MarcupTaskStyled.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getEditTask } from "../../redax/todoTasks/todoActions";
-import { getFilteredByCompletedSelector, getFilteredByNotCompletedSelector, getFilteredByTitleSelector } from "../../redax/filter/filterSelectors";
+import { getAllTasks, getEditTask } from "../../redax/todoTasks/todoActions";
+import { getFilteredByCompletedSelector, getFilteredByTitleSelector } from "../../redax/filter/filterSelectors";
 import { useState } from "react";
-import { getDaleteTaskOperation, getEditTaskOperation, getUpdateTaskOperation } from "../../redax/todoTasks/todoOperations";
+import { getAllTasksOperation, getDaleteTaskOperation, getEditTaskOperation, getUpdateTaskOperation } from "../../redax/todoTasks/todoOperations";
 import { editTaskSelector } from "../../redax/todoTasks/todoSelectors";
+import { useEffect } from "react";
 
 
 const MarkupTasks = () => {
@@ -15,13 +16,16 @@ const MarkupTasks = () => {
     taskText: "",
     completed: false,
   };
+
   const dispatch = useDispatch();
   const [state, setState] = useState(initialState);
   const newItems = useSelector(getFilteredByTitleSelector);
-  const newItemsCompleted = useSelector(getFilteredByCompletedSelector);
-  const newItemsNotCompleted = useSelector(getFilteredByNotCompletedSelector);
-  const edit = useSelector(editTaskSelector);
+  const itemsCompleted = useSelector(getFilteredByCompletedSelector);
+  const editItem = useSelector(editTaskSelector);
 
+  useEffect(() => {
+    dispatch(getAllTasksOperation());
+  }, [dispatch, newItems]);
 
   const handleChange = (evt) => {
     setState((prev) => ({ ...prev, [evt.target.name]: evt.target.value }));
@@ -32,9 +36,22 @@ const MarkupTasks = () => {
     dispatch(getEditTaskOperation(id, state));
   }
 
+  const onHandleChangeCompleted = () => {
+    dispatch(getAllTasks(itemsCompleted))
+  }
   return (
     <div className={styles.markupTaskContainer}>
       <ul className={styles.ulContainer}>
+        <li className={styles.newTask} >
+          <label className={styles.checkboxTaskCompletedLabel}> Completed only
+            <input
+              className={styles.checkboxTaskCompletedInput}
+              type="checkbox"
+              name="completed"
+              onChange={() => onHandleChangeCompleted()}
+            />
+          </label>
+        </li>
         {newItems?.map((item) => (
           <li className={styles.newTask} key={item.id}>
             <p className={styles.completed}>Completed</p>
@@ -46,19 +63,20 @@ const MarkupTasks = () => {
               checked={item.completed}
             />
 
-            {edit?.id === item.id ? (<button
+            {editItem?.id === item.id ? (<button
               className={styles.btnEdit}
               type="button"
               onClick={() => handleSubmitEdit(item.id, item)}
             >Submit edit
-            </button>) : (<button
-              className={styles.btnEdit}
-              type="button"
-              onClick={() => dispatch(getEditTask(item))}
-            >Edit Task
-            </button>)}
+            </button>) :
+              (<button
+                className={styles.btnEdit}
+                type="button"
+                onClick={()=>dispatch(getEditTask(item))}
+              >Edit Title
+              </button>)}
 
-            {edit?.id === item.id ? (<input
+            {editItem?.id === item.id ? (<input
               className={styles.inputEditName}
               type="text"
               name="name"
@@ -82,7 +100,6 @@ const MarkupTasks = () => {
 };
 
 export default MarkupTasks;
-
 
 
 	// const handleLicenceChange = (evt) => {
