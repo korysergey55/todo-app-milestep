@@ -5,12 +5,12 @@ import FormAddTasks from "../components/todoTasks/FormAddTasks";
 import MarkupTasks from "../components/markupTasks/MarkupTasks";
 
 import { useDispatch } from "react-redux";
-import { getAllAdvByCategoryApiOperation } from "../redax/todoTasks/todoOperations";
+import { getAllTasksOperation } from "../redax/todoTasks/todoOperations";
 
 const TasksPage = () => {
  const dispatch = useDispatch();
  useEffect(() => {
-  dispatch(getAllAdvByCategoryApiOperation());
+  dispatch(getAllTasksOperation());
  }, [dispatch]);
  return (
   <>

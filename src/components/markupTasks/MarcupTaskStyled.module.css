@@ -46,6 +46,17 @@
  background-color: crimson;
  color: white;
 }
+.btnEdit{
+ display: inline-block;
+ margin: 0 auto;
+ margin-bottom: 10px;
+ display: inline-block;
+ width: 100px;
+}
+.btnEdit:hover{
+ cursor: pointer;
+ background-color: rgb(106, 243, 14);
+}
 .checkboxTask {
  position: absolute;
  top: 8%;
